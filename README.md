@@ -44,4 +44,3 @@ Make sure you are in the CollegeProject directory. Go to the localhost and the p
 
 - To know more about Django, refer https://www.djangoproject.com/
 - To know more about Python, refer https://www.python.org/doc/
-
