@@ -20,12 +20,10 @@ To create a  virutal environment follow these steps:
     $ pip install pipenv
     $ git clone https://github.com/GeekyFreelancers/CollegeProject
     $ cd CollegeProject
-    $ pipenv install python==3.6.5
+    $ pipenv install .
     $ pipenv shell
 
-This will create and activate a virtual environment with Python version as specified. Now you need to install the `Django 2.0.7`(current version)
-
-    $ pip install django==2.0.7
+This will create and activate a virtual environment with Python and Django version as specified in the Pipfile.
 ***
 ## Run the Project
 
