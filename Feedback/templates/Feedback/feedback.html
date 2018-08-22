@@ -1,0 +1,42 @@
+{% extends 'Feedback/base.html' %}
+
+{% block title %} Feedback Form {% endblock %}
+
+{% block feedback %}
+  <form action="" method="POST">
+    <table border="5">
+      <tr>
+        <th>Teacher Name</th>
+        <th>Subject Name</th>
+        <th>Punctuality</th>
+        <th>Subject Knowledge</th>
+        <th>Discipline/Behavior</th>
+        <th>Methodology of teaching</th>
+        <th>Communication/audibility</th>
+        <th>Syllabus Coverage</th>
+      </tr>
+      {% for teacher, form in Iterators %}
+          <tr>
+            <td>{{ teacher.teacher_name }}</td>
+            <td>{{ teacher.subject_name }}</td>
+            {% for field in form %}
+                <td>
+                  <table>
+                    <tr>
+                      {% for radio in field %}
+                          <td>{{ radio }}</td>
+                      {% endfor %}
+                    </tr>
+                    <tr>
+                      {% for radio in field %}
+                          <td>{{ radio.data.value }}</td>
+                      {% endfor %}
+                    </tr>
+                  </table>
+                </td>
+            {% endfor %}
+          </tr>
+      {% endfor %}
+    </table>
+  </form>
+{% endblock %}

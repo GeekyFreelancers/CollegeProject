@@ -14,7 +14,7 @@ class Teacher(models.Model):
 	teacher_name = models.CharField(max_length=30)
 	teacher_dept = models.CharField(max_length=20)
 
-    def __str__(self):
+	def __str__(self):
 		return self.teacher_name
 
 
