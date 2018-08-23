@@ -29,6 +29,7 @@ This will create and activate a virtual environment with Python and Django versi
 
 First you need to populate the database as:
 
+    $ python manage.py makemigrations Feedback
     $ python manage.py migrate
 
 Then you need to run the server as:
