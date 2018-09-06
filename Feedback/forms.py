@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import ModelForm
+from .models import Feedback
 
 choices = (
     ('1', ''),
@@ -8,17 +10,16 @@ choices = (
     ('5', ''),
 )
 
+class FeedbackForm(forms.ModelForm):	
+	class Meta:
+		model = Feedback
+		exclude=['teacher', 'section']
+		widgets =	{
+			'Punctuality': forms.RadioSelect(choices=choices,),
+			'Subject_knowledge': forms.RadioSelect(choices=choices,),
+			'Behaviour': forms.RadioSelect(choices=choices,),
+			'Method_of_teaching': forms.RadioSelect(choices=choices,),
+			'Audibility': forms.RadioSelect(choices=choices,),
+			'Syllabus_coverage': forms.RadioSelect(choices=choices,)
+		}
 		
-class FeedbackForm(forms.Form):
-	Punctuality = forms.IntegerField(label='', widget=forms.RadioSelect(
-		choices=choices), required=True)
-	Subject_knowledge = forms.IntegerField(label='', widget=forms.RadioSelect(
-		choices=choices), required=True)
-	Behavior = forms.IntegerField(label='', widget=forms.RadioSelect(
-		choices=choices), required=True)
-	Method_of_teaching = forms.IntegerField(label='', widget=forms.RadioSelect(
-		choices=choices), required=True)
-	Audibility = forms.IntegerField(label='', widget=forms.RadioSelect(
-		choices=choices), required=True)
-	Syllabus_coverage = forms.IntegerField(label='', widget=forms.RadioSelect(
-		choices=choices), required=True)

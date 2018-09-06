@@ -4,6 +4,8 @@
 
 {% block feedback %}
   <form action="" method="POST">
+    {% csrf_token %}
+    {{ formset.management_form }}
     <table border="5">
       <tr>
         <th>Teacher Name</th>
@@ -37,6 +39,7 @@
             {% endfor %}
           </tr>
       {% endfor %}
-    </table>
+    </table><br>
+    <center><button class="btn btn-primary" type="submit" name="submit">Submit</button></center>
   </form>
 {% endblock %}
