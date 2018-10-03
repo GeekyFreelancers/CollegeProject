@@ -3,10 +3,11 @@
 {% block title %} Feedback Form {% endblock %}
 
 {% block feedback %}
+<h1 align="center"class="feedback-h1" style="font-size: 60px;">Feedback Form</h1>
   <form action="" method="POST">
     {% csrf_token %}
     {{ formset.management_form }}
-    <table border="5">
+    <table border="5" class="w3-table  w3-striped w3-bordered">
       <tr>
         <th>Teacher Name</th>
         <th>Subject Name</th>
@@ -39,8 +40,8 @@
             {% endfor %}
           </tr>
       {% endfor %}
-    </table>
-    <input type="submit" value="Submit">
+    </table><br>
+    <center><button class="btn btn-primary" type="submit" name="submit" class="feedback-button">Submit</button></center>
   </form>
   {% if error %}
       <script> incomplete(); </script>
