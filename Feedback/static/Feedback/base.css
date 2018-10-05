@@ -8,6 +8,39 @@ body {
     background: linear-gradient(to right, #25c481, #25b7c4);
     font-family: 'Roboto', sans-serif;
 }
+
+.feed-button{
+    font-size: 20px;margin-top: 30px;
+}
+.feed-h1{
+    margin-top: 50px; margin-bottom: 50px;color:white;text-decoration: underline; text-shadow: 2px 2px #05a151;font-weight: bold;letter-spacing: 2px;
+}
+.base-img{
+    float:left;
+}
+.check-datalist{
+    width:230px;
+}
+.check-detail-center-p{
+    font-weight: bold;
+}
+.check-detail-center-h1{
+        font-weight: bold;text-decoration:underline;
+}
+.check-button{
+    margin-top: 20px;margin-left: 775px;  width: 5%;font-size: 15px;
+}
+.check-form{
+    margin-top: 30px;margin-left: 160px;
+}
+.base-p{
+    font-size: 17px;
+}
+
+.check-h1{
+    margin-top: 50px;color:white;text-decoration: underline; text-shadow: 2px 2px #05a151;font-weight: bold;letter-spacing: 2px;
+}
+
 .head{
     width: 100%;
 }
@@ -25,7 +58,7 @@ body {
 }
 .detail{
     margin-top: 50px;
-    margin-right: 50px;
+    margin-right: 160px;
 }
 .detail p{
     font-size: 23px;
@@ -35,7 +68,7 @@ body {
 table{
   	width: 100%;
   	font-size: 1em;
-    line-height: 18px;
+    line-height: 8px;
 }
 
 thead{
@@ -88,19 +121,4 @@ td {
     text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
     border-right: 1px solid #C1C3D1;
     line-height: 18px;  
-}
-
-.feedback-h1{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color:white;
-    text-decoration: underline; 
-    text-shadow: 2px 2px #05a151;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.feedback-button{
-    font-size: 20px;
-    margin-top: 30px;
 }
