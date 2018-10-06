@@ -36,22 +36,30 @@ def Feedback_form_Page(request, class_name):
         request, 'Feedback/feedback.html',
         {'Iterators': Iterators, 'formset': Formset, 'error': error})
 
+
 def Feedback_submit(request):
     return render(request, 'Feedback/submit.html')
-    
+
+
 def teacher_check(request):
     feedback = Feedback.objects.all()
     teacher = Teacher.objects.all()
-    if request.method=='POST':
+    if request.method == 'POST':
         faculty_name = request.POST['dropdown1']
         dept_name = request.POST['dropdown']
         for t in feedback:
-            if(t.teacher.teacher_name == faculty_name and t.teacher.teacher_dept == dept_name):
+            if(t.teacher.teacher_name == faculty_name and
+               t.teacher.teacher_dept == dept_name):
                 Flag = 1
                 break
             else:
                 Flag = 0
                 continue
-        return render(request,'Feedback/teacher_check.html',{'Feedback' : feedback, 'department' : dept_name, 'faculty' : faculty_name, 'Flag': Flag,'teacher':teacher})
+        return render(
+            request, 'Feedback/teacher_check.html',
+                     {'Feedback': feedback, 'department': dept_name,
+                      'faculty': faculty_name, 'Flag': Flag,
+                      'teacher': teacher})
     else:
-        return render(request, 'Feedback/teacher_check.html',{'teacher':teacher})       
+        return render(request, 'Feedback/teacher_check.html',
+                               {'teacher': teacher})
