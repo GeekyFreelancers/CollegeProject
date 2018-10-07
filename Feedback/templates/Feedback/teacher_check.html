@@ -59,8 +59,9 @@
           {% endfor %}
 				</table>
       </div>			
-    	{% elif Flag == 0 %}
-      	<script>window.alert("Teacher feedback does not exist");</script>
-    	{% endif %}	
+    {% elif Flag == 0 %}
+      <script>window.alert("Teacher feedback does not exist");</script>
+    {% endif %}	
   </form>	
 {% endblock %}
+
