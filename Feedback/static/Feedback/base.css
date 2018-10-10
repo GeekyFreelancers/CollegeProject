@@ -9,6 +9,7 @@ table{
 }
 
 thead{
+  line-height: 30px;
   background: #2e63e7;
   text-transform: uppercase;
 }
