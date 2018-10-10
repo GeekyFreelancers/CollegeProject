@@ -43,7 +43,8 @@ def Feedback_submit(request):
 
 def teacher_check(request):
     feedback = Feedback.objects.all()
-    teacher = Teacher.objects.all()
+    teacher = Teacher.objects.values('teacher_name').distinct()
+    dept = Teacher.objects.values('teacher_dept').distinct()
     if request.method == 'POST':
         faculty_name = request.POST['dropdown1']
         dept_name = request.POST['dropdown']
@@ -59,7 +60,7 @@ def teacher_check(request):
             request, 'Feedback/teacher_check.html',
                      {'Feedback': feedback, 'department': dept_name,
                       'faculty': faculty_name, 'Flag': Flag,
-                      'teacher': teacher})
+                      'teacher': teacher, 'dept': dept})
     else:
         return render(request, 'Feedback/teacher_check.html',
-                               {'teacher': teacher})
+                               {'teacher': teacher, 'dept': dept})
