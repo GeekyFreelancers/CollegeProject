@@ -1,6 +1,4 @@
 body {
-  font-weight: 300;
-  line-height: 1.42em;
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
   background: linear-gradient(to right, #25c481, #25b7c4);
   font-family: 'Roboto', sans-serif;
@@ -8,12 +6,9 @@ body {
 
 table{
   width: 100%;
-  font-size: 1em;
-  line-height: 18px;
 }
 
 thead{
-  line-height: 30px;
   background: #2e63e7;
   text-transform: uppercase;
 }
@@ -21,7 +16,6 @@ thead{
 th {
   color: #fff;
   letter-spacing: 1px;
-  vertical-align: bottom;
   background: #167F92;
   border-bottom: 4px solid #9ea7af;
   border-right: 1px solid #343a45;
