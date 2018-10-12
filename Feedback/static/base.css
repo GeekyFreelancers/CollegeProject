@@ -6,11 +6,11 @@ body {
   font-family: 'Roboto', sans-serif;
  }
 
-/*table{
+table{
   width: 100%;
   font-size: 1em;
   line-height: 18px;
-}*/
+}
 
 thead{
   line-height: 30px;
@@ -110,7 +110,7 @@ td {
 }
 
 .base-p{
-  font-size: 17px;
+  font-size: 27px;
 }
 
 .check-datalist{
