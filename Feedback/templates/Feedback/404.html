@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>404</title>
+	<style> 
+	body, html {
+    height: 100%;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("{% static 'Feedback/images/cool_404.gif' %}");
+  height: 100%;
+}
+
+	</style>
+</head>
+<body>
+	<div class="bgimg-1">
+<!-- 	<h4> Error 404 : Page Not Found</h4> -->
+	</div>
+</body>
+</html>

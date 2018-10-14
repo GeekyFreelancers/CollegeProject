@@ -1,19 +1,68 @@
-{% extends 'Feedback/base.html' %}
-
 {% load static %}
 
-{% extends 'Feedback/base.html' %}
+<!doctype html>
+<html lang="en">
+<head>
 
-{% block title %} Teacher Check {% endblock %}
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block feedback %}
-  <link rel="stylesheet" type="text/css" href="{% static 'Feedback/teacher_check.css' %}">
+    <title>feedback detail</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+      <!-- Custom fonts for this template -->
+      <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+      <!-- Plugin CSS -->
+      <link href="{% static 'vendor/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css">
+
+      <!-- Custom styles for this template -->
+      <link href="{% static 'css/freelancer.min.css' %}" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="{% static '#page-top' %}">ADGITM</a>
+        </button>
+      </div>
+    </nav>
+
+<br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+      <div class="container">
+       <header class="jumbotron bg-primary text-white text-center" >
+    <div class="head">
+      <img src="{% static 'Feedback/images/logo.jpg' %}" height="160" class="base-img">
+      <br><br><br>
+      <h2 id="title">DR. AKHILESH DAS GUPTA INSTITUTE OF TECHNOLOGY AND MANAGEMENT </h2><p class="base-p">(Affiliated to GGSIPU and Babu Banarasi lal)</p><br>
+        <h3><span>Shashtri park, Delhi-110053</span></p></h3>
+    </div>
+       </header>
+     </div>
+
+
+  <div class="container">
   <h1 align="center" class="check-h1">Feedback Details</h1><br><br>
   <form action="{% url 'teacher_check' %}" method="POST" class="check-form">
   {% csrf_token %}
 	  <div class="form">
 	    <h3>
-	      Department:-
+	      Department:
 	        <input list="teacher_dept" name="dropdown" autocomplete="off">
 	          <datalist id="teacher_dept" class="check-datalist">
 	            <option selected="disabled" value="none"></option>
@@ -23,7 +72,7 @@
 	              {% endfor %}
 	          </datalist>
 	        </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	      Faculty:-
+	      Faculty:
 	        <input list="teacher_name" name='dropdown1' autocomplete="off">
 	          <datalist id="teacher_name" class="check-datalist">
 	            <option selected="disabled" value="none"></option>
@@ -34,11 +83,13 @@
 	        </input>
 	    </h3>
 	  </div><br><br>
-	  <button class="btn btn-primary check-button" name="submit" type="submit">Submit</button><br><br>
+	   <center><button class="btn btn-primary " name="submit" type="submit">Submit</button> </center>
+	   <br><br><br><br><br><br>
 	  {% if Flag == 1 %}
 	    <div class="detail">
-	      <center><h1 class="check-detail-center-h1">Details of {{ faculty }}</h1><p class="check-detail-center-p">({{ department }})</p></center>
-	      <table>
+	      <center><h1 class="check-detail-center-h1">Details of {{ faculty }}</h1><h5>(Department : {{ department }})</h5></center>
+    <div class="table-responsive container" >
+    <table class="table table-hover table-dark" class="col-sm-12 sm-auto">
 	        <thead>
 	          <th>Section</th>
 	          <th>Punctuality</th>
@@ -50,7 +101,7 @@
 	        </thead>
 	        {% for F in Feedback %}
 	          {% if F.teacher.teacher_name == faculty and F.teacher.teacher_dept == department %}
-	            <tr>
+	            <tr class="table-active" align="center">
 	              <td>{{ F.section }}</td>
 	              <td>{{ F.Punctuality }}</td>
 	              <td>{{ F.Subject_knowledge }}</td>
@@ -62,9 +113,30 @@
 	          {% endif %}
 	        {% endfor %}
 	      </table>
+	  </div>
 	    </div>
+	    <br><br><br><br><br><br><br><br>
 	  {% elif Flag == 0 %}
 	    <script>window.alert("Teacher feedback does not exist");</script>
 	  {% endif %}
   </form>
-{% endblock %}
+</div>
+
+ <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+  <script src="{% static 'js/contact_me.js' %}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{% static 'js/freelancer.min.js' %}"></script>
+
+
+  </body>
+</html>

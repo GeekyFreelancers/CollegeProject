@@ -40,6 +40,9 @@ def Feedback_form_Page(request, class_name):
 def Feedback_submit(request):
     return render(request, 'Feedback/submit.html')
 
+def Error(request):
+    return render(request, 'Feedback/404.html')    
+
 
 def teacher_check(request):
     feedback = Feedback.objects.all()
