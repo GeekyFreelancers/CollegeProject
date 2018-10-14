@@ -1,3 +1,5 @@
+{% extends 'Feedback/base.html' %}
+
 {% load static %}
 
 {% extends 'Feedback/base.html' %}
@@ -15,8 +17,9 @@
 	        <input list="teacher_dept" name="dropdown" autocomplete="off">
 	          <datalist id="teacher_dept" class="check-datalist">
 	            <option selected="disabled" value="none"></option>
-	              {% for element in teacher %}
-	                <option value="{{ element.teacher_dept }}"></option>
+
+	              {% for element in dept %}
+                <option value="{{ element.teacher_dept }}"></option>
 	              {% endfor %}
 	          </datalist>
 	        </input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

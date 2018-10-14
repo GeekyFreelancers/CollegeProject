@@ -20,3 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Feedback.urls')),
 ]
+
+admin.site.site_header = "Administrator"
+admin.site.site_title = "Admin"
+admin.site.index_title = "Feedback"
