@@ -9,13 +9,16 @@
     <div class="table-responsive container" >
     <table class="table table-hover table-dark" class="col-sm-12 sm-auto">
       <tr class="table-active" align="center" >
-        <th scope="col">Teacher Name</th>
-        <th scope="col">Subject Name</th>
+        <th scope="col">Teacher Name &nbsp;&nbsp;&nbsp; </th>
+        <th scope="col">Subject Name &nbsp;&nbsp;&nbsp;</th>
         <th scope="col">Punctuality</th>
         <th scope="col">Subject Knowledge</th>
-        <th scope="col">Discipline/Behavior</th>
-        <th scope="col">Methodology of teaching</th>
-        <th scope="col">Communication/audibility</th>
+        <th scope="col">Discipline/
+        Behavior</th>
+        <th scope="col">Methodology of
+         teaching</th>
+        <th scope="col">Communication/
+        audibility</th>
         <th scope="col">Syllabus Coverage</th>
       </tr>
       {% for teacher, form in Iterators %}
@@ -26,11 +29,12 @@
               <div class="cont" >
                 <td>
                   <table>
-                    <tr class="table-active" align="center" >
-                      {% for radio in field %}
-                          <td>
-                          {{ radio }}
-                        </td>
+                    <tr class="table-active"  >
+                        {% for radio in field %}
+                            {{ radio.tag }}
+                            <label for="{{ radio.id_for_label }}" class="star" >
+                            </label>
+  
                       {% endfor %}
                     </tr>
                   </table>
@@ -49,3 +53,6 @@
       <script> incomplete(); </script>
   {% endif %}
 {% endblock %}
+
+
+
