@@ -1,12 +1,37 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="{% static 'Feedback/base.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Success</title>
+	<style> 
+
+	 .testcolor{color: #fab5cb;}
+
+
+	body, html {
+    height: 100%;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("{% static 'Feedback/images/success.gif' %}");
+  height: 100%;
+}
+
+	</style>
 </head>
 <body>
-<h1>SUCCESSFULLY SUBMITTED THE FORM</h1>
+
+	<div class="bgimg-1 text-uppercase testcolor" >
+<!-- 	<center><h2><br><br><br> Form Successfully Submitted.</h2></center> -->
+	</div>
 </body>
 </html>
+a
